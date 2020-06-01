@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"/>
+
+<!--    <settings>-->
+<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>标准日志实现-->
+<!--    </settings>-->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+    <typeAliases>
+        <typeAlias type="fun.hanmingwu.pojo.Students" alias="student"/>
+        <typeAlias type="fun.hanmingwu.pojo.Teacher" alias="teacher"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper class="fun.hanmingwu.dao.StudentsMapper"/>
+        <mapper class="fun.hanmingwu.dao.TeacherMapper"/>
+    </mappers>
+</configuration>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--绑定类-->
+<mapper namespace="fun.hanmingwu.dao.UserMapper">
+    <select id="getUserList" resultType="fun.hanmingwu.pojo.User">
+        select * from mybatis.user
+    </select>
+    <select id="getUserById" parameterType="int" resultType="fun.hanmingwu.pojo.User">
+        select * from mybatis.user where id = #{id}
+    </select>
+    <insert id="addUser" parameterType="fun.hanmingwu.pojo.User">
+        insert into mybatis.user (id ,name,pwd) values (#{id},#{name},#{pwd})
+    </insert>
+    <update id="updateUser" parameterType="fun.hanmingwu.pojo.User">
+        update mybatis.user set name = #{name} ,pwd = #{pwd}   where id=#{id};
+    </update>
+    <update id="update" parameterType="map">
+        update mybatis.user set name = #{pname} ,pwd = #{ppwd}   where id=#{id};
+    </update>
+    <select id="getUserByLimit" parameterType="map" resultType="fun.hanmingwu.pojo.User">
+        select * from mybatis.user limit #{startIndex} ,#{pageSize};
+    </select>
+
+</mapper>
