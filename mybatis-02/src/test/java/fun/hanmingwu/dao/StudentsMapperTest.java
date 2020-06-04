@@ -13,7 +13,7 @@ public class StudentsMapperTest {
     public void testGetStudents(){
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         StudentsMapper mapper = sqlSession.getMapper(StudentsMapper.class);
-        List<Students> students = mapper.getStudents();
+        List<Students> students = mapper.getStudents2();
         for (Students student : students) {
             System.out.println(student);
 

@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface StudentsMapper {
     public List<Students> getStudents();
+    public List<Students> getStudents2();
 }

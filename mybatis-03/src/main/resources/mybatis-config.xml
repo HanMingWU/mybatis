@@ -10,10 +10,11 @@
 <!--    </settings>-->
     <settings>
         <setting name="logImpl" value="LOG4J"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
     <typeAliases>
-        <typeAlias type="fun.hanmingwu.pojo.Students" alias="Student"/>
-        <typeAlias type="fun.hanmingwu.pojo.Teacher" alias="Teacher"/>
+        <typeAlias type="fun.hanmingwu.pojo.Blog" alias="Blog"/>
+
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -27,7 +28,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper class="fun.hanmingwu.dao.StudentsMapper"/>
-        <mapper class="fun.hanmingwu.dao.TeacherMapper"/>
+        <mapper class="fun.hanmingwu.dao.BlogMapper"/>
+
     </mappers>
 </configuration>
